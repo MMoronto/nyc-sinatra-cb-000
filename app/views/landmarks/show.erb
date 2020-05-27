@@ -13,4 +13,18 @@
 <!--<br><a class="button" href="/landmarks">Landmarks</a>-->
 <!--<a class="button" href="/">Go Home</a>-->
 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year Completed</th>
+  </tr>
+  <tr>
+    <td><%= @landmark.name %></td>
+    <td><%= @landmark.year_completed %></td>
+  </tr>
+<table>
 
+
+  <a class="button" href="/landmarks/<%= @landmark.id %>/edit">Edit</a>
+  <a class="button" href="/landmarks">Landmarks</a>
+  <a class="button" href="/">Go Home</a>
