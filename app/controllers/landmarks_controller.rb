@@ -18,4 +18,18 @@ class LandmarksController < ApplicationController
     @landmark = Landmark.find(params[:id])
     erb :'landmarks/edit'
   end
+  
+    post '/figures' do
+    @figure = Figure.create(params['figure'])
+    unless params[:landmark][:name].empty?
+      @figure.landmarks << Landmark.createPparams[:landmark]
+    end
+    
+    unless params[:title][:name].empty?
+      @figure.titles << Title.createPparams[:title]
+    end
+    
+    @figure.save
+    redirect to "/figures/#{@figure.id}"
+  end
 end
